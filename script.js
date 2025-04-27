@@ -2,6 +2,9 @@ const params = new URLSearchParams(window.location.search);
 const input = document.getElementById('urlInput');
 const button = document.getElementById('downloadBtn');
 const progressBar = document.getElementById('progressBar');
+catch(err) {
+  document.getElementById("error").innerHTML = err.message;
+}
 let fileUrl = params.get('url');
 if (fileUrl) {
   input.value = fileUrl; // Prefill if ?url= exists
